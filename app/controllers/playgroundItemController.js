@@ -4,7 +4,7 @@ exports.get_item = function (req, res) {
 
 
     var MongoClient = require('mongodb').MongoClient;
-    var url = "mongodb+srv://user1:0357k8gFZAqg6L8I@cluster0-rfkil.mongodb.net/test?retryWrites=true";
+    var url = process.env.MONGODB_CONNECTION;
 
     // res.json({ "itemId": req.params.itemId })
 
