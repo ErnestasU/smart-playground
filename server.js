@@ -2,11 +2,17 @@ require('dotenv').load();
 var express = require('express');
 var bodyParser = require('body-parser');
 var itemRoute = require('./app/routes/playgroundItemRoute');
+const mongo =  require('./app/database/mongo.js');
 
 var app = new express();
 var router = new express.Router();
 
 const port = process.env.PORT || 3001;
+
+const mongoConnectionString = process.env.MONGODB_CONNECTION;
+const mongoDatabase = process.env.MONGODB_DATABASE;
+
+mongo.connect(mongoConnectionString, mongoDatabase)
 
 itemRoute(router);
 
