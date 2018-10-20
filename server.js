@@ -2,7 +2,10 @@ require('dotenv').load();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const itemRoute = require('./app/routes/playgroundItemRoute');
+
+const trainersRoute = require('./app/routes/trainersRoute');
+const playgroundRoute = require('./app/routes/playgroundRoute');
+
 const mongo =  require('./app/database/mongo.js');
 
 var app = new express();
@@ -15,7 +18,8 @@ const mongoDatabase = process.env.MONGODB_DATABASE;
 
 mongo.connect(mongoConnectionString, mongoDatabase)
 
-itemRoute(router);
+trainersRoute(router);
+playgroundRoute(router);
 
 var corsOptions = {
   origin: process.env.CORS_WHITELIST,
