@@ -4,7 +4,7 @@ module.exports = function(router) {
     var itemController = require('../controllers/playgroundItemController');
 
     router.route('/trainers')
-        .get(itemController.get_all_trainers);
+        .get(itemController.get_all_public_fields)
 
     router.route('/trainer/:ref')
         .get(itemController.get_trainer_by_ref);
