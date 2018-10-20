@@ -6,7 +6,7 @@ var itemRoute = require('./app/routes/playgroundItemRoute');
 var app = new express();
 var router = new express.Router();
 
-const PORT = process.env.PORT || 3001;
+const port = process.env.PORT || 3001;
 
 itemRoute(router);
 
@@ -19,5 +19,5 @@ app.use(function(req, res) {
 });
 
 app.listen(port, function(req, res) {
-  console.log(`App running on port ${PORT}`);
+  console.log(`App running on port ${port}`);
 });
