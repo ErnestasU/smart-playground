@@ -6,5 +6,9 @@ module.exports = function(router) {
     router.route('/items/:itemId')
       .get(itemController.get_item)
       .put(itemController.update_item);
+
+    router.route('/trainers')
+        .get(itemController.get_all_trainers);
+
   };
   
