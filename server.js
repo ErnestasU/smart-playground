@@ -22,7 +22,7 @@ trainersRoute(router);
 playgroundRoute(router);
 
 var corsOptions = {
-  origin: process.env.CORS_WHITELIST,
+  origin: process.env.CORS_WHITELIST.split(','),
   methods: ['GET', 'PUT', 'POST'],
   credentials: true,
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
